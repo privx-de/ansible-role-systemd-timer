@@ -3,6 +3,7 @@
 timer_owner: root
 timer_group: root
 timer_mode: 0644
+timer_persistent: "true"
 
 create_service: true
 systemd_dir: /etc/systemd/system

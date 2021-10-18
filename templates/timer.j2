@@ -2,9 +2,13 @@
 Description={{ timer_description | default(timer_name) }}
 
 [Timer]
-OnBootSec=
-OnUnitInactiveSec=
-Persistent=
+{% if timer_on_boot_sec %}
+OnBootSec={{ timer_on_boot_sec }}
+{% endif %}
+{% if timer_on_unit_inactive_sec %}
+OnUnitInactiveSec={{ timer_on_unit_inactive_sec }}
+{% endif %}
+Persistent={{ timer_persistent }}
 Unit={{ service_unit }}
 
 [Install]

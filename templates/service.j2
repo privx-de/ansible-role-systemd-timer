@@ -1,6 +1,8 @@
 [Unit]
 Description={{ service_description | default(timer_name) }}
-Wants=
+{% if service_wants -%}
+Wants={{ service_wants }}
+{% endif -%}
 
 [Service]
 User={{ service_user }}

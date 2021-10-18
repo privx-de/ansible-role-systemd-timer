@@ -2,14 +2,14 @@
 Description={{ timer_description | default(timer_name) }}
 
 [Timer]
-{% if timer_on_boot_sec %}
+{% if timer_on_boot_sec -%}
 OnBootSec={{ timer_on_boot_sec }}
-{% endif %}
-{% if timer_on_unit_inactive_sec %}
+{% endif -%}
+{% if timer_on_unit_inactive_sec -%}
 OnUnitInactiveSec={{ timer_on_unit_inactive_sec }}
-{% endif %}
+{% endif -%}
 Persistent={{ timer_persistent }}
 Unit={{ service_unit }}
 
 [Install]
-WantedBy=timers.target
+WantedBy={{ timer_wanted_by }}

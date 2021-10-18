@@ -4,6 +4,7 @@ timer_owner: root
 timer_group: root
 timer_mode: 0644
 timer_persistent: "true"
+timer_wanted_by: timers.target
 
 create_service: true
 enable_timer: true

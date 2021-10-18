@@ -1,5 +1,5 @@
 [Unit]
-Description=
+Description={{ service_description | default(timer_name) }}
 Wants=
 
 [Service]

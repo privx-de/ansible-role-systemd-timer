@@ -1,12 +1,14 @@
 ---
 
-service_dir: /etc/systemd/system
+timer_owner: root
+timer_group: root
+timer_mode: 0644
+
+create_service: true
+systemd_dir: /etc/systemd/system
+
+service_unit: "{{ timer_name }}.service"
 service_owner: root
 service_group: root
 service_mode: 0644
 service_user: root
-
-timer_dir: /etc/systemd/system
-timer_owner: root
-timer_group: root
-timer_mode: 0644

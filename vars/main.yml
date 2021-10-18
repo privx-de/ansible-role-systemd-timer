@@ -1,2 +1,3 @@
 ---
-# vars file for systemd-timer
+
+timer_unit: "{{ timer_name }}.timer"

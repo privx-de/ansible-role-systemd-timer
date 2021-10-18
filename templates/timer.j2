@@ -1,11 +1,11 @@
 [Unit]
-Description=
+Description={{ timer_description | default(timer_name) }}
 
 [Timer]
 OnBootSec=
 OnUnitInactiveSec=
 Persistent=
-Unit=
+Unit={{ service_unit }}
 
 [Install]
 WantedBy=timers.target

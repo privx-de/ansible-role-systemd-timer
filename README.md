@@ -23,9 +23,15 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+    - hosts: localhost
+      tasks:
+        include_role:
+          name: privx_de.systemd-timer
+        vars:
+          timer_name: backup-job
+          timer_on_boot_sec: 10m
+          timer_on_unit_inactive_sec: 24h
+          service_exec_start: /usr/local/bin/backup.sh
 
 License
 -------

@@ -1,0 +1,19 @@
+---
+
+- name: Template {{ name }}.service
+  ansible.builtin.template:
+    src: service.j2
+    dest: "{{ service_dir }}/{{ name }}.service"
+    owner: "{{ service_owner }}"
+    group: "{{ service_group }}"
+    mode: "{{ service_mode }}"
+  notify: handlers.systemd.daemon_reload
+
+- name: Template {{ name }}.timer
+  ansible.builtin.template:
+    src: timer.j2
+    dest: "{{ timer_dir }}/{{ name }}.timer"
+    owner: "{{ timer_owner }}"
+    group: "{{ timer_group }}"
+    mode: "{{ timer_mode }}"
+  notify: handlers.systemd.daemon_reload

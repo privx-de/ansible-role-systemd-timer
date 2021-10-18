@@ -6,6 +6,7 @@ timer_mode: 0644
 timer_persistent: "true"
 
 create_service: true
+enable_timer: true
 systemd_dir: /etc/systemd/system
 
 service_unit: "{{ timer_name }}.service"

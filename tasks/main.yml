@@ -18,3 +18,8 @@
     group: "{{ timer_group }}"
     mode: "{{ timer_mode }}"
   notify: handlers.systemd.daemon_reload
+
+- name: Enable {{ timer_unit }}
+  ansible.builtin.systemd:
+    name: "{{ timer_unit }}"
+    enable: "{{ enable_time }}"

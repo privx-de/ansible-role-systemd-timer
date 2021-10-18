@@ -1,4 +1,4 @@
-Role Name
+systemd_timer
 =========
 
 Not complete role to create systemd timers
@@ -26,7 +26,7 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: localhost
       tasks:
         include_role:
-          name: privx_de.systemd-timer
+          name: privx_de.systemd_timer
         vars:
           timer_name: backup-job
           timer_on_boot_sec: 10m

@@ -8,7 +8,7 @@
     group: "{{ service_group }}"
     mode: "{{ service_mode }}"
   notify: handlers.systemd.daemon_reload
-  when: create_service|bool == true
+  when: create_service == "true"
 
 - name: Template {{ timer_unit }}
   ansible.builtin.template:
